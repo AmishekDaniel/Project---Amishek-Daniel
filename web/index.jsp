@@ -22,6 +22,15 @@
                <!---------------------------------header sedtion starts--------------->
 <header>
     
+    <%
+    String registered = (String) session.getAttribute("isRegistered");
+    if (registered == null || !registered.equals("true")) {
+        response.sendRedirect("register.jsp");
+        return;
+    }
+%>
+
+    
 
     <a href="#" class="logo" ><i class="fas fa-utensils"></i>resto.</a>
 
